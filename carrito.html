@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mi viaje</title>
-  <link rel="stylesheet" href="styles/api.css" />
+  <link rel="stylesheet" href="styles/styles.css" /> <!-- Usamos el mismo archivo unificado -->
   <script defer src="js/carrito.js"></script>
 </head>
 <body>
   <header>
-    <h1>Tu Viaje a Argentina</h1>
-    <nav>
+    <nav class="navbar">
+      <h1>Tu Viaje a Argentina</h1>
       <ul>
         <li><a href="index.html">Inicio</a></li>
         <li><a href="destinos.html">Destinos</a></li>
@@ -22,14 +22,12 @@
   <main>
     <h2>Destinos seleccionados</h2>
     <div id="carrito-contenedor" class="contenedor-productos">
-      <!-- Aquí se cargan los destinos agregados -->
+      <!-- Los destinos agregados al carrito se cargarán aquí -->
     </div>
     <p id="total">Total: $0</p>
-    <button onclick="vaciarCarrito()">Vaciar viaje</button>
+    <button onclick="vaciarCarrito()" class="btn-destacado">Vaciar viaje</button>
   </main>
 
   <footer>
     <p>&copy; 2025 Turismo en Argentina</p>
   </footer>
-</body>
-</html> 
