@@ -4,8 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Destinos Turísticos</title>
-  <link rel="stylesheet" href="styles/styles.css" /> <!-- Usar el mismo archivo de estilos unificado -->
-  <script defer src="js/apiProductos.js"></script>
+  <link rel="stylesheet" href="styles/styles.css" /> <!-- Usar el archivo de estilos unificado -->
 </head>
 <body>
   <header>
@@ -22,12 +21,15 @@
   <main>
     <h2>Lista de destinos turísticos destacados</h2>
     <div id="contenedor-productos" class="contenedor-productos">
-      <!-- Aquí se cargarán los destinos desde productos.json -->
+      <!-- Los destinos se cargarán dinámicamente aquí -->
     </div>
   </main>
 
   <footer>
     <p>&copy; 2025 Turismo en Argentina. Todos los derechos reservados.</p>
   </footer>
+
+  <!-- Enlazar el script externo -->
+  <script src="js/apiProductos.js"></script>
 </body>
 </html>
