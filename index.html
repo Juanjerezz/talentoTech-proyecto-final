@@ -3,8 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Explorá destinos turísticos de Argentina. Armá tu viaje ideal con nuestro sitio interactivo.">
+  <meta name="keywords" content="turismo, argentina, viajes, destinos, naturaleza, cultura">
+  <meta name="author" content="Tu Nombre">
   <title>Turismo en Argentina</title>
   <link rel="stylesheet" href="styles/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
 </head>
 <body>
   <header>
@@ -14,6 +18,8 @@
         <li><a href="index.html">Inicio</a></li>
         <li><a href="destinos.html">Destinos</a></li>
         <li><a href="carrito.html">Mi Viaje</a></li>
+        <li><a href="#reseñas">Reseñas</a></li>
+        <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
   </header>
@@ -54,6 +60,33 @@
       </div>
     </section>
 
+    <section id="reseñas">
+      <h2>Opiniones de viajeros</h2>
+      <div class="grid-reseñas">
+        <article>
+          <p>“Una experiencia única, la organización fue excelente.”</p>
+          <small>- Laura</small>
+        </article>
+        <article>
+          <p>“Volvería a elegir este sitio para armar mi viaje.”</p>
+          <small>- Diego</small>
+        </article>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <form action="https://formspree.io/f/xpwrvdyq" method="POST" id="form-contacto">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre" required>
+        <label for="email">Correo electrónico:</label>
+        <input type="email" name="email" id="email" required>
+        <label for="mensaje">Mensaje:</label>
+        <textarea name="mensaje" id="mensaje" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+
     <section class="cta">
       <a href="carrito.html" class="btn-destacado">Armar mi viaje</a>
     </section>
@@ -62,5 +95,7 @@
   <footer>
     <p>&copy; 2025 Turismo en Argentina. Todos los derechos reservados.</p>
   </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
