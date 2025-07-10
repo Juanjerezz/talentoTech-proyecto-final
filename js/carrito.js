@@ -66,7 +66,13 @@ function vaciarCarrito() {
 } 
 
 function finalizarCompra() {
-  localStorage.removeItem('carrito');
-  alert("¡Gracias por tu compra!");
-  window.location.href = "index.html";
+  const confirmar = confirm("¿Estás seguro de que querés finalizar tu compra?");
+
+  if (confirmar) {
+    localStorage.removeItem('carrito');
+    alert("¡Gracias por tu compra!");
+    window.location.href = "index.html";
+  } else {
+    alert("Tu compra no se ha realizado.");
+  }
 }
