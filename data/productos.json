@@ -4,27 +4,27 @@
     "nombre": "Cataratas del Iguazú",
     "descripcion": "Una de las maravillas naturales del mundo, ubicada en Misiones.",
     "precio": "Desde $30.000",
-    "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Iguazu_Falls_view_from_Brazil_2.jpg/800px-Iguazu_Falls_view_from_Brazil_2.jpg"
+    "imagen": "images/cataratas.jpg"
   },
   {
     "id": 2,
     "nombre": "Bariloche",
     "descripcion": "Destino ideal para disfrutar del lago Nahuel Huapi y la nieve en invierno.",
     "precio": "Desde $45.000",
-    "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Bariloche_Lake.jpg/800px-Bariloche_Lake.jpg"
+    "imagen": "images/bariloche.jpg"
   },
   {
     "id": 3,
     "nombre": "Salta y Jujuy",
     "descripcion": "Montañas de colores, cultura andina y pueblos históricos.",
     "precio": "Desde $35.000",
-    "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Cerro_de_los_7_colores_-_Purmamarca.JPG/800px-Cerro_de_los_7_colores_-_Purmamarca.JPG"
+    "imagen": "images/saltayjujuy.webp"
   },
   {
     "id": 4,
     "nombre": "El Calafate",
     "descripcion": "Conocé el Glaciar Perito Moreno y la Patagonia profunda.",
     "precio": "Desde $60.000",
-    "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Perito_Moreno_Glacier_Patagonia_Argentina_Luca_Galuzzi_2005.JPG/800px-Perito_Moreno_Glacier_Patagonia_Argentina_Luca_Galuzzi_2005.JPG"
+    "imagen": "images/elcalafate.jpg"
   }
 ]
