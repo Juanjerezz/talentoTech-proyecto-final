@@ -64,3 +64,9 @@ function vaciarCarrito() {
   localStorage.removeItem("carrito");
   location.reload();
 } 
+
+function finalizarCompra() {
+  localStorage.removeItem('carrito');
+  alert("¡Gracias por tu compra!");
+  window.location.href = "index.html";
+}
