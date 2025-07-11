@@ -107,11 +107,13 @@ Archivo `script.js` con las siguientes funcionalidades:
 ├── index.html
 ├── destinos.html
 ├── carrito.html
+├── adicionales.html
 ├── styles/
 │   └── styles.css
 ├── js/
 │   ├── script.js
 │   ├── apiProductos.js
+│   ├── adicionales.js
 │   └── carrito.js
 └── images/
     └── fotoReseña.jpg (y otras imágenes)

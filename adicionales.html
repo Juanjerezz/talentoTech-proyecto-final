@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Destinos Turísticos</title>
-  <meta name="description" content="Explorá una lista dinámica de destinos turísticos y armá tu viaje.">
+  <title>Adicionales para tu viaje</title>
+  <meta name="description" content="Agregá productos adicionales a tu viaje, como tecnología, accesorios o más.">
   <link rel="stylesheet" href="styles/styles.css" />
+  <script defer src="js/adicionales.js"></script>
 </head>
 <body>
   <header>
@@ -23,27 +24,19 @@
     </nav>
   </header>
 
-
-  <main>
-
+  <main class="contenedor">
     <section class="introduccion-destinos">
-  <p>Explorá los destinos más increíbles de Argentina. Agregalos a tu viaje y viví una experiencia inolvidable.</p>
-  </section>
-    <h2>Lista de destinos turísticos destacados</h2>
-    <div id="contenedor-productos" class="contenedor-productos">
-      <!-- Los destinos se cargarán dinámicamente aquí -->
+      <p>Sumá accesorios o productos útiles para tu viaje: tecnología, cuidado personal y más.</p>
+    </section>
+    
+    <h2>Productos recomendados para viajeros</h2>
+    <div id="contenedor-adicionales" class="contenedor-productos">
+      <!-- Productos de la API se cargarán aquí -->
     </div>
   </main>
-
-  <section class="cta">
-  <a href="carrito.html" class="btn-destacado">Ver mi viaje armado</a>
-</section>
 
   <footer>
     <p>&copy; 2025 Turismo en Argentina. Todos los derechos reservados.</p>
   </footer>
-
-  <script src="js/apiProductos.js"></script>
-  <script src="js/script.js"></script>
 </body>
 </html>

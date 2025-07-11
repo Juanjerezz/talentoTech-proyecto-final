@@ -17,42 +17,36 @@
         <li><a href="index.html">Inicio</a></li>
         <li><a href="destinos.html">Destinos</a></li>
         <li><a href="carrito.html">Mi Viaje</a></li>
+        <li><a href="adicionales.html">Adicionales</a></li>
         <li><a href="#reseñas">Reseñas</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
   </header>
 
-
   <main class="contenedor">
     
-    <!-- 📝 Introducción al carrito -->
     <section class="resumen-viaje">
       <h2>Resumen de tu viaje</h2>
       <p>Revisá y organizá los destinos seleccionados. Podés eliminarlos, vaciar todo o confirmar tu compra.</p>
     </section>
 
-    <!-- 🔄 Progreso visual del viaje -->
     <section class="progreso-viaje">
       <p>🛫 <strong>Explorar destinos</strong> ➡️ 🧳 <strong>Tu viaje</strong> ➡️ 💳 <strong>Confirmar compra</strong></p>
     </section>
 
-    <!-- 🧳 Carrito dinámico -->
-    <h3 style="margin-top: 2rem;">Destinos seleccionados</h3>
+    <h3 style="margin-top: 2rem;">Destinos y adicionales seleccionados</h3>
     <div id="carrito-contenedor" class="contenedor-productos">
-      <!-- Los destinos agregados se cargan dinámicamente -->
+      <!-- Destinos y adicionales cargados aquí -->
     </div>
 
-    <!-- 💰 Total -->
     <p id="total" class="total-carrito">Total: $0</p>
 
-    <!-- 🔘 Acciones -->
     <div style="text-align: center; margin-top: 2rem;">
       <button onclick="vaciarCarrito()" class="btn-destacado">🗑️ Vaciar viaje</button>
       <button onclick="finalizarCompra()" class="btn-destacado">✅ Finalizar compra</button>
     </div>
 
-    <!-- 🔙 Volver -->
     <div style="text-align: center; margin-top: 2rem;">
       <a href="destinos.html" class="btn">⬅️ Seguir explorando</a>
     </div>

@@ -386,3 +386,70 @@ button:hover {
     display: flex;
   }
 }
+
+#contenedor-adicionales .producto {
+  max-width: 180px;     
+  padding: 1rem 0.8rem;  
+  font-size: 0.9rem;    
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+#contenedor-adicionales .producto img {
+  height: 120px;         
+  border-radius: 8px;
+}
+
+#contenedor-adicionales .producto h3 {
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+#contenedor-adicionales .producto p {
+  font-size: 0.85rem;
+  margin: 0.3rem 0;
+}
+
+#contenedor-adicionales .producto .precio {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+#contenedor-adicionales .producto button {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+.producto.adicional {
+  max-width: 180px;
+  padding: 1rem 0.8rem;
+  font-size: 0.9rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.producto.adicional img {
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.producto.adicional h3 {
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+.producto.adicional p {
+  font-size: 0.85rem;
+  margin: 0.3rem 0;
+}
+
+.producto.adicional .precio {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.producto.adicional button {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}

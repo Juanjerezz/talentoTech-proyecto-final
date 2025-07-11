@@ -1,6 +1,6 @@
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-// Cargar datos del archivo JSON
+// Cargar destinos desde JSON local
 fetch("data/productos.json")
   .then(response => response.json())
   .then(destinos => {
@@ -9,49 +9,59 @@ fetch("data/productos.json")
     }
   });
 
-function agregarAlCarrito(id) {
-  fetch("data/productos.json")
-    .then(response => response.json())
-    .then(destinos => {
-      const destinoSeleccionado = destinos.find(dest => dest.id === id);
-      carrito.push(destinoSeleccionado);
-      localStorage.setItem("carrito", JSON.stringify(carrito));
-      alert(`Agregaste ${destinoSeleccionado.nombre} a tu viaje`);
-    });
-}
-
 function mostrarCarrito(destinosData) {
   const contenedor = document.getElementById("carrito-contenedor");
   contenedor.innerHTML = "";
 
   if (carrito.length === 0) {
-    contenedor.innerHTML = `<p class="mensaje-vacio">Tu viaje aún no tiene destinos. <a href="destinos.html">Agregá lugares para comenzar</a>.</p>`;
+    contenedor.innerHTML = `<p class="mensaje-vacio">Tu viaje aún no tiene destinos o adicionales. <a href="destinos.html">Agregá lugares para comenzar</a>.</p>`;
     document.getElementById("total").style.display = "none";
     return;
   }
 
   let total = 0;
 
-  carrito.forEach((destino, index) => {
-    const destinoInfo = destinosData.find(d => d.id === destino.id);
-    const div = document.createElement("div");
+  carrito.forEach((item, index) => {
+    let div = document.createElement("div");
     div.classList.add("producto");
 
-    const precioNumerico = parseInt(destinoInfo.precio.replace(/[^0-9]/g, ""));
-    total += precioNumerico;
+    // Si es adicional (desde API)
+    if (item.adicional) {
+      div.classList.add("adicional");
+      total += item.precio;
+      div.innerHTML = `
+        <img src="${item.imagen}" alt="${item.nombre}">
+        <h3>${item.nombre}</h3>
+        <p>${item.descripcion}</p>
+        <p class="precio">USD $${item.precio}</p>
+        <button onclick="eliminarDelCarrito(${index})">Eliminar</button>
+      `;
+    } else {
+      // Es un destino local
+      const destinoInfo = destinosData.find(d => d.id === item.id);
+      if (destinoInfo) {
+        // Extraer número del precio para sumarlo
+        const precioNumerico = parseInt(destinoInfo.precio.replace(/[^0-9]/g, ""));
+        total += precioNumerico;
 
-    div.innerHTML = `
-      <img src="${destinoInfo.imagen}" alt="${destinoInfo.nombre}">
-      <h3>${destinoInfo.nombre}</h3>
-      <p>${destinoInfo.descripcion}</p>
-      <p class="precio">${destinoInfo.precio}</p>
-      <button onclick="eliminarDelCarrito(${index})">Eliminar</button>
-    `;
+        div.innerHTML = `
+          <img src="${destinoInfo.imagen}" alt="${destinoInfo.nombre}">
+          <h3>${destinoInfo.nombre}</h3>
+          <p>${destinoInfo.descripcion}</p>
+          <p class="precio">${destinoInfo.precio}</p>
+          <button onclick="eliminarDelCarrito(${index})">Eliminar</button>
+        `;
+      } else {
+        // En caso que no encuentre el destino, no mostrar nada o mostrar mensaje
+        div.innerHTML = `<p>Producto no encontrado</p>`;
+      }
+    }
 
     contenedor.appendChild(div);
   });
 
-  document.getElementById("total").innerText = `Total (${carrito.length} destino${carrito.length !== 1 ? 's' : ''}): $${total}`;
+  document.getElementById("total").innerText = `Total (${carrito.length} producto${carrito.length !== 1 ? 's' : ''}): $${total}`;
+  document.getElementById("total").style.display = "block";
 }
 
 function eliminarDelCarrito(index) {
@@ -76,3 +86,14 @@ function finalizarCompra() {
     window.location.href = "index.html";
   }
 }
+
+// Menu toggle móvil (opcional)
+document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('menu');
+  if (menuToggle) {
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('activo');
+    });
+  }
+});
