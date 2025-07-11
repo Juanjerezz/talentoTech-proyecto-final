@@ -4,13 +4,11 @@ let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 fetch("data/productos.json")
   .then(response => response.json())
   .then(destinos => {
-    // Si estamos en la página de carrito.html
     if (document.getElementById("carrito-contenedor")) {
       mostrarCarrito(destinos);
     }
   });
 
-// Agrega un destino al carrito por su ID
 function agregarAlCarrito(id) {
   fetch("data/productos.json")
     .then(response => response.json())
@@ -22,10 +20,15 @@ function agregarAlCarrito(id) {
     });
 }
 
-// Muestra el carrito con los destinos agregados
 function mostrarCarrito(destinosData) {
   const contenedor = document.getElementById("carrito-contenedor");
   contenedor.innerHTML = "";
+
+  if (carrito.length === 0) {
+    contenedor.innerHTML = `<p class="mensaje-vacio">Tu viaje aún no tiene destinos. <a href="destinos.html">Agregá lugares para comenzar</a>.</p>`;
+    document.getElementById("total").style.display = "none";
+    return;
+  }
 
   let total = 0;
 
@@ -48,31 +51,28 @@ function mostrarCarrito(destinosData) {
     contenedor.appendChild(div);
   });
 
-  document.getElementById("total").innerText = `Total: $${total}`;
+  document.getElementById("total").innerText = `Total (${carrito.length} destino${carrito.length !== 1 ? 's' : ''}): $${total}`;
 }
 
-// Elimina un destino del carrito por índice
 function eliminarDelCarrito(index) {
   carrito.splice(index, 1);
   localStorage.setItem("carrito", JSON.stringify(carrito));
-  location.reload(); // Refresca para actualizar la vista
+  location.reload();
 }
 
-// Vaciar todo el carrito
 function vaciarCarrito() {
-  carrito = [];
-  localStorage.removeItem("carrito");
-  location.reload();
-} 
+  if (confirm("¿Estás seguro de que querés vaciar el viaje?")) {
+    carrito = [];
+    localStorage.removeItem("carrito");
+    location.reload();
+  }
+}
 
 function finalizarCompra() {
-  const confirmar = confirm("¿Estás seguro de que querés finalizar tu compra?");
-
+  const confirmar = confirm("¿Estás seguro de querer confirmar tu compra?");
   if (confirmar) {
     localStorage.removeItem('carrito');
-    alert("¡Gracias por tu compra!");
+    alert("¡Gracias por tu compra! Te llegará un correo con el itinerario.");
     window.location.href = "index.html";
-  } else {
-    alert("Tu compra no se ha realizado.");
   }
 }

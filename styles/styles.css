@@ -313,3 +313,30 @@ button:hover {
   font-size: 1.2rem;
   margin-bottom: 0.3rem;
 }
+
+.resumen-viaje {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.progreso-viaje {
+  text-align: center;
+  margin: 1rem 0 2rem;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.mensaje-vacio {
+  text-align: center;
+  color: #777;
+  font-size: 1.2rem;
+  margin: 3rem auto;
+}
+
+.total-carrito {
+  text-align: right;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  padding-right: 1rem;
+}
