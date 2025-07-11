@@ -340,3 +340,20 @@ button:hover {
   margin-top: 1rem;
   padding-right: 1rem;
 }
+
+
+#buscador {
+  width: 80%;
+  max-width: 400px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.introduccion-destinos {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #555;
+}
